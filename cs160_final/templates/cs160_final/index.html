@@ -1,19 +1,55 @@
+<!--
 {% load static %}
-
+-->
 <!DOCTYPE html>
 <html>
 <head>
-	<title>title</title>
+	<title>PyAccountant</title>
 <!-- Latest compiled and minified CSS -->
-<!-- First include jquery js -->
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-<!-- Then include bootstrap js -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+	<!-- 
 	<a href="chapterOne"><h1>Chapter One</h1></a>
+	-->
+	
+	{% load staticfiles %}
+	<!--
+	<img src="{% static '/home/ubuntu/workspace/cs160_final/static/cs160_final/demons.png' %}" width="750" height="1334" alt="five" usemap="#verthalfmap"> 
+  	-->
+  
+  <!--
+	  	<img src="{% static '/home/ubuntu/cs160_final/static/cs160_final/demons.png' %}"> 
+	-->
+	<!-- 
+  	<img src="{% static 'demons.png' %}">
+  	-->
+  	{% load static %}
+  	<!--
+<img height="1000" width="2000" src="https://image.ibb.co/kJoztz/demonic_pictures.png" alt="My image"/>
+-->
+<!-- Not Found: /home/ubuntu/cs160_final/cs160_final/static/cs160_final/demons.png -->
+
+<img height="1000" width="2000" src="https://image.ibb.co/kJoztz/demonic_pictures.png" alt="My image" usemap="#indexMap"/>
+<!--
+<img src="demonic_pictures.png" usemap="#indexMap">
+-->
+<map name="indexMap">
+    <area alt="chapterZero" href="chapterZero" coords="404,210,294,271" shape="rect">
+    <area alt="chapterOne" href="chapterOne" coords="633,267,522,325" shape="rect">
+    <area alt="chapterTwo" href="chapterTwo" coords="769,306,881,364" shape="rect">
+    <area alt="chapterThree" href="chapterThree" coords="1026,357,1139,417" shape="rect">
+    <area alt="chapterFour" href="chapterFour" coords="1273,424,1384,484" shape="rect">
+    <area alt="chapterFive" href="chapterFive" coords="1418,541,1529,604" shape="rect">
+    <area alt="chapterSix" href="chapterSix" coords="1262,687,1374,746" shape="rect">
+    <area alt="chapterSeven" href="chapterSeven" coords="1057,719,1170,777" shape="rect">
+    <area alt="chapterEight" href="chapterEight" coords="886,777,999,839" shape="rect">
+    <area alt="finale" href="finale" coords="980,899,1091,961" shape="rect">
+</map>
 </body>
 </html>

@@ -1,28 +1,28 @@
-
 <!DOCTYPE html>
 
 <html>
 	<head>
-		<title>Input</title>
-
+		<title>PyAccountant</title>
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script></head>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 	<body>
 		<!-- Your layout here -->
  
     <style type="text/css">
 .col-xs-6 {
    border-radius:10px;
-   padding: 5px;
+   padding: 20px;
 }
 </style>
 <div class="container">
  <nav class="navbar navbar-default navbar-expand navbar-dark bg-dark">
-      
-      
       <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="nav navbar-nav pull-left">
           <li class="nav-item active">
@@ -44,17 +44,13 @@
         </ul>
        
       </div>
-      
-      
-      
-    
     </nav>
 
 
     
     
     <div class="row">
-  <div class="col-xs-6">
+  <div class="col-xs-6" style="padding-right:20px; border-right: 1px solid #ccc; border-left: 1px solid #ccc;">
       <p>
         This is the left hand side of the page. This has the story and elements, including a picture.
         <div class="col-xs-12"><img width="128" height="128" src="https://vignette.wikia.nocookie.net/the-demonic-paradise/images/6/65/Corson.jpg/revision/latest?cb=20160127223521"></div>
@@ -70,13 +66,17 @@
       <p>
         Steve wants to summon a demon named "bob." (Demon names are lowercase). Type out how to summon bob below and press "run" to attempt to summon him.
       </p>
+      <p id="hintArea">
+        
+      </p>
       <textarea rows="20" cols="50">
       Enter text to summon a demon here. 
       </textarea>
       <br>
-      <button type="button" class="btn btn-primary"> Hint</button>
-<button type="button" class="btn btn-info" disabled> Previous </button>
-<button type="button" class="btn btn-success"> Run</button>
+      <button type="button" class="btn btn-info" > Previous </button>
+      <button onclick="hintFunction()" type="button" class="btn btn-primary" > Hint</button>
+
+      <button type="button" class="btn btn-success" > Run</button>
       
       
  </div>
@@ -86,5 +86,22 @@
     </div>
     </div>
 
+<script>
+  var visibleHint = false;
+  var hintArea = document.getElementById("hintArea");
+  
+  function hintFunction() {
+    if (!visibleHint) {
+      hintArea.innerHTML = "Displaying"
+      visibleHint = true;
+    } else {
+      hintArea.innerHTML = "not displaying"
+      visibleHint = false;
+      
+    }
+  }
+  
+</script>
 	</body>
+	
 </html>

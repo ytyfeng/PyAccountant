@@ -15,4 +15,7 @@ def chapterOneRight(request):
     return render(request, 'cs160_final/chapterOneRight.html')
 
 def chapterOneWrong(request):
-    return render(request, '/cs160_final/cs160_final/chapterOneWrong.html')
+    return render(request, 'cs160_final/chapterOneWrong.html')
+    
+def chapterTwo(request):
+    return render(request, 'cs160_final/chapterTwo.html')

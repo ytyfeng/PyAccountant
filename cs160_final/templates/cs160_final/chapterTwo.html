@@ -1,16 +1,17 @@
-
 <!DOCTYPE html>
 
 <html>
 	<head>
-		<title>Input</title>
-<script src="js/jquery-1.11.0.min.js"></script>
+		<title>PyAccountant</title>
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
 </head>
 	<body>
 		<!-- Your layout here -->
@@ -23,8 +24,6 @@
 </style>
 <div class="container">
  <nav class="navbar navbar-default navbar-expand navbar-dark bg-dark">
-      
-      
       <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="nav navbar-nav pull-left">
           <li class="nav-item active">
@@ -46,10 +45,6 @@
         </ul>
        
       </div>
-      
-      
-      
-    
     </nav>
 
 
@@ -72,13 +67,19 @@
       <p>
         Steve wants to summon a demon named "bob." (Demon names are lowercase). Type out how to summon bob below and press "run" to attempt to summon him.
       </p>
-      <textarea rows="20" cols="50">
-      Enter text to summon a demon here. 
-      </textarea>
+      <p id="hintArea">
+        
+      </p>
+      <textarea id="codeInput" rows="20" cols="50" placeholder="Enter text to summon a demon here."></textarea>
       <br>
-      <button type="button" class="btn btn-primary"> Hint</button>
-<button type="button" class="btn btn-info" disabled> Previous </button>
-<button type="button" class="btn btn-success"> Run</button>
+      <button type="button" class="btn btn-info"> Previous </button>
+      <button onclick="hintFunction()" type="button" class="btn btn-primary"> Hint</button>
+
+      <button id="runBtn" onclick="runHandle()" type="button" class="btn btn-success"> Run</buttcon>
+      <button id="nextBtn" type="button" class="btn btn-warning" style="display: none;"> Next</button>
+      <button id="solutionBtn" onclick="solutionHandle()" type="button" class="btn btn-default" style="display: none;"> Solution</button>
+      <h4 id="correctAlert" style="display: none;">Good Job! You are ready to explore the next chapter.</h4>
+      <h4 id="incorrectAlert" style="display: none;">Incorrect answer. Don't give up. Try again!</h4>
       
       
  </div>
@@ -88,5 +89,29 @@
     </div>
     </div>
 
+<script>
+function runHandle(){
+  var textElement = document.getElementById("codeInput");
+  var input = textElement.value;
+  var answer = "sample answer";
+  if(input == answer){
+      document.getElementById("nextBtn").style.display = "inline";
+      document.getElementById("correctAlert").style.display = "block";
+      document.getElementById("incorrectAlert").style.display = "none";
+  }
+  else{
+    document.getElementById("solutionBtn").style.display = "inline";
+    document.getElementById("correctAlert").style.display = "none";
+    document.getElementById("incorrectAlert").style.display = "block";
+
+  }
+}
+
+function solutionHandle(){
+  return ;
+}
+  
+</script>
 	</body>
+	
 </html>

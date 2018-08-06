@@ -21,12 +21,15 @@ from django.contrib import admin
 from . import views
 from django.core.urlresolvers import reverse
 from cs160_final.views import *
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
+    url('index', views.index, name='index'),
+    url('chapterZero', views.chapterZero, name='chapterZero'),
     url('chapterOne', views.chapterOne, name='chapterOne'),
-    url('chapterOneRight', views.chapterOneRight, name='chapterOneRight'),
-    url('chapterOneWrong', views.chapterOneWrong, name='chapterOneWrong'),
     url('chapterTwo', views.chapterTwo, name='chapterTwo'),
+    url('chapterThree', views.chapterThree, name='chapterThree'),
+    url('chapterFour', views.chapterFour, name='chapterFour'),
+    url('chapterFive', views.chapterFive, name='chapterFive'),
+
 ]

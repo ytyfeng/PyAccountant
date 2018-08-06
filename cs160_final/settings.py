@@ -40,26 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-    '/home/ubuntu/workspace/cs160_final/static/cs160_final',
-)
-
-"""
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "/cs160_final/static"),
-]
-"""
-#STATIC_ROOT = "/home/ubuntu/workspace/cs160_final/static"
-#STATIC_ROOT = os.path.join(PROJECT_DIR,'static')
-#STATIC_URL = '/home/static/'
-#STATIC_URL = "/home/ubuntu/workspace/cs160_final/static/"
-
-
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -74,14 +54,32 @@ MIDDLEWARE_CLASSES = [
 ROOT_URLCONF = 'cs160_final.urls'
 
 
-
+"""
 TEMPLATE_DIRS = (
     r'/home/ubuntu/workspace/cs160_final/templates/cs160_final',
 )
 
+"""
 
 
 """
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        #'APP_DIRS': True,
+        #'OPTIONS': {
+        #    'context_processors': [
+        #        'django.template.context_processors.debug',
+        #        'django.template.context_processors.request',
+        #        'django.contrib.auth.context_processors.auth',
+        #        'django.contrib.messages.context_processors.messages',
+        #    ],
+        #},
+    },
+],
+"""
+
 
 TEMPLATES = [
     {
@@ -98,33 +96,7 @@ TEMPLATES = [
         },
     },
 ]
-"""
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['cs160_final/templates'],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media',
-                'django.core.context_processors.static',
-            ],
-        },
-    },
-]
-
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static")]
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),"static")
-MEDIA_ROOT =  os.path.join(os.path.dirname(BASE_DIR),"media")
-MEDIA_URL = '/media/'
 
 WSGI_APPLICATION = 'cs160_final.wsgi.application'
 

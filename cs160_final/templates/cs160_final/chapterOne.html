@@ -26,19 +26,19 @@
       <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="nav navbar-nav pull-left">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Back to Index <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="index">Back to Index <span class="sr-only">(current)</span></a>
           </li>
           
         </ul>
       
       
-       <a style="margin: 0; float: none; text-align:center; position:absolute; left:50%; margin-left: -50px; display:block;" class="navbar-brand navbar-middle">Navbar 2</a>
+       <a style="margin: 0; float: none; text-align:center; position:absolute; left:50%; margin-left: -50px; display:block;" class="navbar-brand navbar-middle">Chapter 1</a>
           
         </ul>
         
         <ul class="nav navbar-nav pull-right">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Next Chapter <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="chapterTwo">Next Chapter <span class="sr-only">(current)</span></a>
           </li>
           
         </ul>
@@ -53,6 +53,19 @@
   <div class="col-xs-6" style="padding-right:20px; border-right: 1px solid #ccc; border-left: 1px solid #ccc;">
       <p>
         This is the left hand side of the page. This has the story and elements, including a picture.
+        <br>
+        <div style="display: flex; justify-content: center;">
+        <img align="middle" src="https://image.ibb.co/eFMwbK/one_one.png">
+        </div>
+        <br>
+        
+        
+        <br>
+        <div style="display: flex; justify-content: center;">
+        <img align="middle" src="https://image.ibb.co/eFMwbK/one_one.png">
+        </div>
+        <br>
+        
         <div class="col-xs-12"><img width="128" height="128" src="https://vignette.wikia.nocookie.net/the-demonic-paradise/images/6/65/Corson.jpg/revision/latest?cb=20160127223521"></div>
         There's obviously more story after this, including example code. For example,
     <br>
@@ -69,33 +82,53 @@
       <p id="hintArea">
         
       </p>
-      <textarea rows="20" cols="50">
-      Enter text to summon a demon here. 
-      </textarea>
+      <textarea id="codeInput" rows="20" cols="50" placeholder="Enter text to summon a demon here."></textarea>
       <br>
       <button type="button" class="btn btn-info" > Previous </button>
       <button onclick="hintFunction()" type="button" class="btn btn-primary" > Hint</button>
 
-      <button type="button" class="btn btn-success" > Run</button>
-      
+      <button id="runBtn" onclick="runHandle()" type="button" class="btn btn-success">Run</buttcon>
+      <button id="nextBtn" onclick="location.href = 'chapterThree' " type="button" class="btn btn-warning" style="display: none;"> Next</button>
+      <button id="solutionBtn" onclick="solutionHandle()" type="button" class="btn btn-default" style="display: none;"> Solution</button>
+      <h4 id="correctAlert" style="display: none;">Good Job! You are ready to explore the next chapter.</h4>
+      <h4 id="incorrectAlert" style="display: none;">Incorrect answer. Don't give up. Try again!</h4>      
       
  </div>
-  
-    
-    
     </div>
     </div>
 
 <script>
+function runHandle(){
+  var textElement = document.getElementById("codeInput");
+  var input = textElement.value;
+  var answer = "bob = []";
+  if(input == answer){
+      document.getElementById("nextBtn").style.display = "inline";
+      document.getElementById("correctAlert").style.display = "block";
+      document.getElementById("incorrectAlert").style.display = "none";
+  }
+  else{
+    document.getElementById("solutionBtn").style.display = "inline";
+    document.getElementById("correctAlert").style.display = "none";
+    document.getElementById("incorrectAlert").style.display = "block";
+
+  }
+}
+
+function solutionHandle(){
+    document.getElementById("codeInput").value = "//Solution\nbob = []";
+  // document.getElementById("codeInput").value = "//Soluiton\n\ine One\n\This is line two";
+}
+
   var visibleHint = false;
   var hintArea = document.getElementById("hintArea");
   
   function hintFunction() {
     if (!visibleHint) {
-      hintArea.innerHTML = "Displaying"
+      hintArea.innerHTML = "Hint: It’s in the story example."
       visibleHint = true;
     } else {
-      hintArea.innerHTML = "not displaying"
+      hintArea.innerHTML = ""
       visibleHint = false;
       
     }

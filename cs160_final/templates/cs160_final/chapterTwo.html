@@ -11,7 +11,29 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
+<style>
+  body {
+    background-color: #EBF8FF;
+    color: #2f4858; 
+  }
+  textarea {
+    background-color: #C3EAFF;
+    color: #2f4858;
+}
+p {
+    font-size: 1.2em;
+}
+ .navbar-default {
+    background-color: #9EE493;
+    border-color: #2f4858;
+}
+.navbar-nav {
+  background-color: #212121;
+}
+nav-link {
+ background-color: #212121;
+}
+</style>
 
 </head>
 	<body>
@@ -28,19 +50,19 @@
       <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="nav navbar-nav pull-left">
           <li class="nav-item active">
-            <a class="nav-link" href="index">Back to Index <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="index" style="background-color: #9EE493;">Back to Index <span class="sr-only">(current)</span></a>
           </li>
           
         </ul>
       
       
-       <a style="margin: 0; float: none; text-align:center; position:absolute; left:50%; margin-left: -50px; display:block;" class="navbar-brand navbar-middle">Chapter 2</a>
+       <a style="margin: 0; float: none; text-align:center; position:absolute; left:50%; margin-left: -50px; display:block;" class="navbar-brand navbar-middle">Chapter 2 (2 min)</a>
           
         </ul>
         
         <ul class="nav navbar-nav pull-right">
           <li class="nav-item active">
-            <a class="nav-link" href="chapterThree">Next Chapter <span class="sr-only">(current)</span></a>
+            <a class="nav-link" style="background-color: #9EE493;" href="chapterThree">Next Chapter <span class="sr-only">(current)</span></a>
           </li>
           
         </ul>
@@ -55,17 +77,18 @@
   <div class="col-xs-6" style="padding-right:20px; border-right: 1px solid #ccc; border-left: 1px solid #ccc;">
       <p>
 First of all, Steve sees how to have demons process information: simply by calling them and directly handing them this information. 
-
+</p>
     <br>
     
     <br>
         <div style="display: flex; justify-content: center;">
-        <img align="middle" src="https://image.ibb.co/inKzwK/two_one.png">
+        <img align="middle" class="img-responsive img-rounded" src="https://image.ibb.co/bONzgK/chapter2.jpg">
         </div>
         <br>
         
     <code>     NAME_OF_DEMON.append(NUMBER)</code>
     <br>
+  <p>
 Continuing to do this lets the demon know what numbers Steve wants them to work on.
       </p>
     
@@ -76,9 +99,11 @@ Question: Steve wants to give bob the number 5. Enter how to do that.
       </p>
       <p id="hintArea">
       </p>
-      <textarea id="codeInput" rows="20" cols="50" placeholder="Enter text to summon a demon here."></textarea>
+      <code>
+        <textarea id="codeInput" rows="20" cols="50" placeholder="Enter text to append 5 to bob"></textarea>
+      </code>
       <br>
-      <button type="button" class="btn btn-info"> Previous </button>
+      <a href="chapterOne"><button type="button" class="btn btn-info"> Previous </button></a>
       <button onclick="hintFunction()" type="button" class="btn btn-primary"> Hint</button>
 
       <button id="runBtn" onclick="runHandle()" type="button" class="btn btn-success"> Run</buttcon>
@@ -88,21 +113,19 @@ Question: Steve wants to give bob the number 5. Enter how to do that.
       <h4 id="correctAlert" style="display: none;">Good Job! You are ready to explore the next chapter.</h4>
       <h4 id="incorrectAlert" style="display: none;">Incorrect answer. Don't give up. Try again!</h4>
       
-      
  </div>
-  
-    
-    
+
     </div>
     </div>
 
 <script>
+var sampleAnswer = "//Solution\nbob.append(5)";
 
 function runHandle(){
   var textElement = document.getElementById("codeInput");
-  var input = textElement.value;
+  var input = textElement.value.replace(/\s/g,'');
   var answer = "bob.append(5)";
-  if(input == answer){
+  if(input == answer || input == sampleAnswer.replace(/\s/g,'')){
       document.getElementById("nextBtn").style.display = "inline";
       document.getElementById("correctAlert").style.display = "block";
       document.getElementById("incorrectAlert").style.display = "none";
@@ -116,7 +139,7 @@ function runHandle(){
 }
 
 function solutionHandle(){
-    document.getElementById("codeInput").value = "//Solution\nbob.append(5)";
+    document.getElementById("codeInput").value = sampleAnswer;
   // document.getElementById("codeInput").value = "//Soluiton\n\ine One\n\This is line two";
   //document.getElementById("nextBtn").style.display = "inline";
 }

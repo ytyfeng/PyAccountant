@@ -1,9 +1,175 @@
+<!DOCTYPE html>
+{% load static %}
 
 <html>
-<br>
+	<head>
+		<title>PyAccountant</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+<style>
+  body {
+    background-color: #EBF8FF;
+    color: #2f4858; 
+  }
+  p {
+    font-size: 1.2em;
+}
+  textarea {
+    background-color: #C3EAFF;
+    color: #2f4858;
+}
+ .navbar-default {
+    background-color: #9EE493;
+    border-color: #2f4858;
+}
+.navbar-nav {
+  background-color: #212121;
+}
+nav-link {
+ background-color: #212121;
+}
+</style>
+
+</head>
+	<body>
+		<!-- Your layout here -->
+ 
+    <style type="text/css">
+.col-xs-6 {
+   border-radius:10px;
+   padding: 20px;
+}
+</style>
+<div class="container">
+ <nav class="navbar navbar-default navbar-expand navbar-dark bg-dark">
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="nav navbar-nav pull-left">
+          <li class="nav-item active">
+            <a class="nav-link" style="background-color: #9EE493;" href="index">Back to Index <span class="sr-only">(current)</span></a>
+          </li>
+          
+        </ul>
+      
+      
+       <a style="margin: 0; float: none; text-align:center; position:absolute; left:50%; margin-left: -50px; display:block;" class="navbar-brand navbar-middle">Chapter 4 (2 min)</a>
+          
+        </ul>
+        
+        <ul class="nav navbar-nav pull-right">
+          <li class="nav-item active">
+            <a class="nav-link" style="background-color: #9EE493;"  href="chapterFive">Next Chapter <span class="sr-only">(current)</span></a>
+          </li>
+          
+        </ul>
+       
+      </div>
+    </nav>
+
+
+    
+    
+    <div class="row">
+  <div class="col-xs-6" style="padding-right:20px; border-right: 1px solid #ccc; border-left: 1px solid #ccc;">
+      <p>
+Secret language for more easily communicating with demons (variables)
+    <br>
+    
+    <br>
         <div style="display: flex; justify-content: center;">
-        <img align="middle" src="https://image.ibb.co/b5rMbK/four_one.png">
+        <img align="middle" class="img-responsive img-rounded" src="https://image.ibb.co/no1SmK/chapter4.jpg" >
         </div>
         <br>
-        
+        <p>
+When dealing with demons, there are all manner of optimizations that sorcerers from yore once used in order to make communicating 
+with demons slightly easier. One of them is to keep track of numbers by stating them during your summoning session. In doing so, 
+the demon will recall the numbers, but only for this session. </p>
+<p>
+<code>
+        <br>
+c = 20<br>
+g = 50<br>
+bob.append(c)<br>
+</code>
+
+
+      </p>
+    
+      </div>
+  <div class="col-xs-6">
+      <p>
+Question: Create a variable named “b” and set it equal to 30. Then append bob “b.”
+      </p>
+      <p id="hintArea">
+      </p>
+      <code>
+      <textarea id="codeInput" rows="20" cols="50" placeholder="Enter text to communicate with the demon."></textarea>
+      </code>
+      <br>
+      <a href="chapterThree"><button type="button" class="btn btn-info"> Previous </button></a>
+      <button onclick="hintFunction()" type="button" class="btn btn-primary"> Hint</button>
+
+      <button id="runBtn" onclick="runHandle()" type="button" class="btn btn-success"> Run</buttcon>
+      <button id="nextBtn" onclick="location.href = 'chapterFive' " type="button" class="btn btn-warning" style="display: none;"> Next</button>
+      <button id="solutionBtn" onclick="solutionHandle()" type="button" class="btn btn-default" style="display: none;"> Solution</button>
+      <h4 id="correctAlert" style="display: none;">Good Job! You are ready to explore the next chapter.</h4>
+      <h4 id="incorrectAlert" style="display: none;">Incorrect answer. Don't give up. Try again!</h4>
+      
+      
+ </div>
+  
+    
+    
+    </div>
+    </div>
+
+<script>
+var sampleAsnwer = "//Solution\nb = 30 \nbob.append(b)";
+
+function runHandle(){
+  var textElement = document.getElementById("codeInput");
+  var input = textElement.value.replace(/\s/g,'');
+  var answer = "b=30bob.append(b)";
+  if(input == answer || input == sampleAsnwer.replace(/\s/g,'')){
+      document.getElementById("nextBtn").style.display = "inline";
+      document.getElementById("correctAlert").style.display = "block";
+      document.getElementById("incorrectAlert").style.display = "none";
+  }
+  else{
+    document.getElementById("solutionBtn").style.display = "inline";
+    document.getElementById("correctAlert").style.display = "none";
+    document.getElementById("incorrectAlert").style.display = "block";
+
+  }
+}
+
+function solutionHandle(){
+    document.getElementById("codeInput").value = sampleAsnwer;
+  // document.getElementById("codeInput").value = "//Soluiton\n\ine One\n\This is line two";
+  //document.getElementById("nextBtn").style.display = "inline";
+}
+
+  var visibleHint = false;
+  var hintArea = document.getElementById("hintArea");
+  
+  function hintFunction() {
+    if (!visibleHint) {
+      hintArea.innerHTML = "Hint: Demons only take names that start with lowercase. The answer for giving bob another value is just the same as giving him a normal number."
+      visibleHint = true;
+    } else {
+      hintArea.innerHTML = ""
+      visibleHint = false;
+      
+    }
+  }
+  
+</script>
+	</body>
+	
 </html>

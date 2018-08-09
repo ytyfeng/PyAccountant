@@ -11,45 +11,105 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+  body {
+    background-color: #EBF8FF;
+    color: #2f4858; 
+  }
+  textarea {
+    background-color: #C3EAFF;
+    color: #2f4858;
+}
+
+p {
+    font-size: 1.2em;
+}
+ .navbar-default {
+    background-color: #9EE493;
+    border-color: #2f4858;
+}
+.navbar-nav {
+  background-color: #212121;
+}
+nav-link {
+ background-color: #212121;
+}
+</style>
+
 </head>
 
 <body>
-	<!-- 
-	<a href="chapterOne"><h1>Chapter One</h1></a>
-	-->
-	
-	{% load staticfiles %}
-	<!--
-	<img src="{% static '/home/ubuntu/workspace/cs160_final/static/cs160_final/demons.png' %}" width="750" height="1334" alt="five" usemap="#verthalfmap"> 
-  	-->
-  
-  <!--
-	  	<img src="{% static '/home/ubuntu/cs160_final/static/cs160_final/demons.png' %}"> 
-	-->
-	<!-- 
-  	<img src="{% static 'demons.png' %}">
-  	-->
-  	{% load static %}
-  	<!--
-<img height="1000" width="2000" src="https://image.ibb.co/kJoztz/demonic_pictures.png" alt="My image"/>
--->
-<!-- Not Found: /home/ubuntu/cs160_final/cs160_final/static/cs160_final/demons.png -->
+    <div class="container">
+ <nav class="navbar navbar-default navbar-expand navbar-dark bg-dark">
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+ 
+        <ul class="nav navbar-nav pull-right">
+          <li class="nav-item active">
+            <a class="nav-link" style="background-color: #9EE493;"  href="chapterZero">Start <span class="sr-only">(current)</span></a>
+          </li>
+          
+        </ul>
+       
+      </div>
+    </nav>
+<h1 style="font-size: 4em;">The Journey to an Easier Life</h1>
 
-<img height="1000" width="2000" src="https://image.ibb.co/kJoztz/demonic_pictures.png" alt="My image" usemap="#indexMap"/>
-<!--
-<img src="demonic_pictures.png" usemap="#indexMap">
--->
-<map name="indexMap">
-    <area alt="chapterZero" href="chapterZero" coords="404,210,294,271" shape="rect">
-    <area alt="chapterOne" href="chapterOne" coords="633,267,522,325" shape="rect">
-    <area alt="chapterTwo" href="chapterTwo" coords="769,306,881,364" shape="rect">
-    <area alt="chapterThree" href="chapterThree" coords="1026,357,1139,417" shape="rect">
-    <area alt="chapterFour" href="chapterFour" coords="1273,424,1384,484" shape="rect">
-    <area alt="chapterFive" href="chapterFive" coords="1418,541,1529,604" shape="rect">
-    <area alt="chapterSix" href="chapterSix" coords="1262,687,1374,746" shape="rect">
-    <area alt="chapterSeven" href="chapterSeven" coords="1057,719,1170,777" shape="rect">
-    <area alt="chapterEight" href="chapterEight" coords="886,777,999,839" shape="rect">
-    <area alt="final" href="final" coords="980,899,1091,961" shape="rect">
-</map>
+<h3 >
+    Steve's daredevil journey of manipulating demonic powers 
+    to make them perform data entry for him
+</h3>
+
+<p>Once upon a time, Steve was a lowly junior accountant who had to work overtime to perform tedious data entry. </p>
+<p>Feeling miserable and exhausted, he started to ponder if there is a better way...</p>
+<p>"Life is too short to enter data manually," he cried. </p>
+
+<div class="row">
+<div class="col-xs-12">
+<img src="https://preview.ibb.co/i1mWVe/index1.png" alt="index1" width=15%;>
+<h4>
+    junior accountant
+</h4>
+<h1><a href="chapterZero" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Chapter 0</a></h1>
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-2"></div>
+<div class="col-xs-10">
+<img src="https://preview.ibb.co/jK1RwK/index2.png" alt="index2" width=35%;>
+<h1><a href="chapterOne" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Chapter 1</a></h1>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-xs-4"></div>
+<div class="col-xs-8"><h1><a href="chapterTwo" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Chapter 2</a></h1></div>
+</div>
+
+<div class="row">
+<div class="col-xs-6"></div>
+<div class="col-xs-6">
+<img src="https://preview.ibb.co/jvBtbK/index3.png" alt="index3" width=35%;>
+<h1><a href="chapterThree" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Chapter 3</a></h1>
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-8"></div>
+<div class="col-xs-4"><h1><a href="chapterFour" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Chapter 4</a></h1></div>
+</div>
+
+<div class="row">
+<div class="col-xs-2"></div>
+<div class="col-xs-10">
+<h1><a href="chapterFive" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Chapter 5</a></h1>
+<img src="https://preview.ibb.co/k7RFqe/index5.png" alt="index5" width=75%;>
+<h4 class="col-xs-9 text-center">
+    senior accountant
+</h4>
+</div>
+</div>
+
 </body>
 </html>

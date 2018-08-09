@@ -12,7 +12,29 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-
+<style>
+  body {
+    background-color: #EBF8FF;
+    color: #2f4858; 
+  }
+  textarea {
+    background-color: #C3EAFF;
+    color: #2f4858;
+}
+p {
+    font-size: 1.2em;
+}
+ .navbar-default {
+    background-color: #9EE493;
+    border-color: #2f4858;
+}
+.navbar-nav {
+  background-color: #212121;
+}
+nav-link {
+ background-color: #212121;
+}
+</style>
 </head>
 	<body>
 		<!-- Your layout here -->
@@ -28,19 +50,19 @@
       <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="nav navbar-nav pull-left">
           <li class="nav-item active">
-            <a class="nav-link" href="index">Back to Index <span class="sr-only">(current)</span></a>
+            <a class="nav-link"  style="background-color: #9EE493;" href="index">Back to Index <span class="sr-only">(current)</span></a>
           </li>
           
         </ul>
       
       
-       <a style="margin: 0; float: none; text-align:center; position:absolute; left:50%; margin-left: -50px; display:block;" class="navbar-brand navbar-middle">Chapter </a>
+       <a style="margin: 0; float: none; text-align:center; position:absolute; left:50%; margin-left: -50px; display:block;" class="navbar-brand navbar-middle">Chapter 3 (2 min)</a>
           
         </ul>
         
         <ul class="nav navbar-nav pull-right">
           <li class="nav-item active">
-            <a class="nav-link" href="chapterThree">Next Chapter <span class="sr-only">(current)</span></a>
+            <a class="nav-link" style="background-color: #9EE493;" href="chapterFour">Next Chapter <span class="sr-only">(current)</span></a>
           </li>
           
         </ul>
@@ -58,23 +80,24 @@ Making a demon do basic math (add, subtract, multiply, parentheses)
     <br>
     <br>
         <div style="display: flex; justify-content: center;">
-        <img align="middle" src="https://image.ibb.co/fjqiOz/three_one.png">
+        <img align="middle" class="img-responsive img-rounded" src="https://preview.ibb.co/bDWXLe/chapter3_1.jpg">
         </div>
         <br>
+        <p>
 Obviously, as an accountant, Steve wants to add and subtract numbers. To do actions such as these, Steve doesn’t even need to summon demons; all summoners are inherently able to perform cantrips as a free action, and so do not need to summon demons in order to perform math.
-For example, in order to add 3 and 5, Steve, only needs to type
+For example, in order to add 3 and 5, Steve, only needs to type </p>
 
     <code>3 + 5</code>
     <br>
+    <p>
 And the demonic interface will tell him what the result will be. 
 
 Steve, however, want to work with the numbers that he has given Bob. In order to do so, he needs to give Bob the location of the number. 
       </p>
         <div style="display: flex; justify-content: center;">
-        <img align="middle" src="https://image.ibb.co/ihDRbK/three_two.png">
+        <img align="middle" class="img-responsive img-rounded" src="https://preview.ibb.co/dCCNLe/chapter3_2.jpg">
         </div>
-        <p>In order to figure this out, Steve can order Bob to state the location of the items
-<code>print(bob)</code>
+        <p>
 
 Steve can the use the corresponding number by telling Bob its corresponding number. Unfortunately, the demonic counting system starts out at zero. On the flip side, demons have now adopted roman numerals,  so those can be used to access numbers.
         </p>
@@ -86,13 +109,15 @@ Tell bob to get the second and third element and add those two numbers together.
       </p>
       <p id="hintArea">
       </p>
-      <textarea id="codeInput" rows="20" cols="50" placeholder="Enter text to summon a demon here."></textarea>
+      <code>
+        <textarea id="codeInput" rows="20" cols="50" placeholder="Enter text to add the second element and third element in the array bob"></textarea>
+      </code>
       <br>
-      <button type="button" class="btn btn-info"> Previous </button>
+      <a href="chapterTwo" ><button type="button" class="btn btn-info"> Previous </button></a>
       <button onclick="hintFunction()" type="button" class="btn btn-primary"> Hint</button>
 
       <button id="runBtn" onclick="runHandle()" type="button" class="btn btn-success"> Run</buttcon>
-      <button id="nextBtn" onclick="location.href = 'chapterThree' " type="button" class="btn btn-warning" style="display: none;"> Next</button>
+      <button id="nextBtn" onclick="location.href = 'chapterFour' " type="button" class="btn btn-warning" style="display: none;"> Next</button>
       <!--<a id="nextBtn" href="chapterThree" class="btn btn-warning" type="button" style="display: none;">Next</a>-->
       <button id="solutionBtn" onclick="solutionHandle()" type="button" class="btn btn-default" style="display: none;"> Solution</button>
       <h4 id="correctAlert" style="display: none;">Good Job! You are ready to explore the next chapter.</h4>
@@ -107,12 +132,13 @@ Tell bob to get the second and third element and add those two numbers together.
     </div>
 
 <script>
+var sampleAnswer = "//Solution\nbob[1] + bob[2]";
 
 function runHandle(){
   var textElement = document.getElementById("codeInput");
-  var input = textElement.value;
-  var answer = "bob[1] + bob[2]";
-  if(input == answer){
+  var input = textElement.value.replace(/\s/g,'');
+  var answer = "bob[1] + bob[2]".replace(/\s/g,'');
+  if(input == answer || input == sampleAnswer.replace(/\s/g,'')){
       document.getElementById("nextBtn").style.display = "inline";
       document.getElementById("correctAlert").style.display = "block";
       document.getElementById("incorrectAlert").style.display = "none";
@@ -126,7 +152,7 @@ function runHandle(){
 }
 
 function solutionHandle(){
-    document.getElementById("codeInput").value = "//Solution\nbob[1] + bob[2]";
+    document.getElementById("codeInput").value = sampleAnswer;
   // document.getElementById("codeInput").value = "//Soluiton\n\ine One\n\This is line two";
   //document.getElementById("nextBtn").style.display = "inline";
 }

@@ -1,8 +1,162 @@
+<!DOCTYPE html>
+{% load static %}
 
 <html>
-<br>
-        <div style="display: flex; justify-content: center;">
-        <img align="middle" src="https://image.ibb.co/grasiz/five_one.png">
+	<head>
+		<title>PyAccountant</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<style>
+  body {
+    background-color: #EBF8FF;
+    color: #2f4858; 
+  }
+  p {
+    font-size: 1.2em;
+}
+  textarea {
+    background-color: #C3EAFF;
+    color: #2f4858;
+}
+ .navbar-default {
+    background-color: #9EE493;
+    border-color: #2f4858;
+}
+.navbar-nav {
+  background-color: #212121;
+}
+nav-link {
+ background-color: #212121;
+}
+</style>
+
+</head>
+	<body>
+		<!-- Your layout here -->
+ 
+    <style type="text/css">
+.col-xs-6 {
+   border-radius:10px;
+   padding: 20px;
+}
+</style>
+<div class="container">
+ <nav class="navbar navbar-default navbar-expand navbar-dark bg-dark">
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="nav navbar-nav pull-left">
+          <li class="nav-item active">
+            <a class="nav-link" style="background-color: #9EE493;" href="index">Back to Index <span class="sr-only">(current)</span></a>
+          </li>
+          
+        </ul>
+      
+      
+       <a style="margin: 0; float: none; text-align:center; position:absolute; left:50%; margin-left: -50px; display:block;" class="navbar-brand navbar-middle">Chapter 5 (8 min)</a>
+          
+        </ul>
+   <!--     
+        <ul class="nav navbar-nav pull-right">
+          <li class="nav-item active">
+            <a class="nav-link" href="chapterFive">Next Chapter <span class="sr-only">(current)</span></a>
+          </li>
+          
+        </ul>
+    -->   
+      </div>
+    </nav>
+
+
+    
+    
+    <div class="row">
+  <div class="col-xs-6" style="padding-right:20px; border-right: 1px solid #ccc; border-left: 1px solid #ccc;">
+      <p>
+While this is all neat, Steve still does not really see how he can make demons do the work for him. He’s basically telling them to do exactly what he was doing already. One way to fix this is to create, define and use spells. Spell are basically just a combination of instructions to give your summon. For starters, steve just wants the demon to add all of the numbers that he’s given it so far. 
+    <br>
+    <br>
+        <div style="display: flex; justify-content: center;" >
+        <img align="middle" class="img-responsive img-rounded" src="https://preview.ibb.co/jBrtRK/chapter5.jpg">
         </div>
         <br>
+
+ 
+      </div>
+  <div class="col-xs-6">
+      <p>
+Question:
+Make bob all up all the numbers Steve has given him so far. Name this spell “addAllNums.”
+      </p>
+      <p id="hintArea">
+      </p>
+      <code>
+      <textarea id="codeInput" rows="20" cols="50" placeholder="Enter text to create addAllNums function"></textarea>
+      </code>
+      <br>
+      <a href="chapterFour"><button type="button" class="btn btn-info"> Previous </button></a>
+      <button onclick="hintFunction()" type="button" class="btn btn-primary"> Hint</button>
+
+      <button id="runBtn" onclick="runHandle()" type="button" class="btn btn-success"> Run</buttcon>
+      <button id="nextBtn" onclick="location.href = 'congrats' " type="button" class="btn btn-warning" style="display: none;"> Next</button>
+      <button id="solutionBtn" onclick="solutionHandle()" type="button" class="btn btn-default" style="display: none;"> Solution</button>
+      <h4 id="correctAlert" style="display: none;">Good Job! You are ready to explore the next chapter.</h4>
+      <h4 id="incorrectAlert" style="display: none;">Incorrect answer. Don't give up. Try again!</h4>
+      
+      
+ </div>
+  
+    
+    
+    </div>
+    </div>
+
+<script>
+var sampleAnswer = "//Solution\ndef addAllNums(demon):\n    result = 0\n    for element in demon:\n        result += element\n        return result";
+
+function runHandle(){
+  var textElement = document.getElementById("codeInput");
+  var input = textElement.value.replace(/\s/g,'');
+  var answer = "def addAllNums(demon):\n    result = 0\n    for element in demon:\n        result += element\n    return result".replace(/\s/g,'');
+  
+  if(input == answer || input == sampleAnswer.replace(/\s/g,'')){
+      document.getElementById("nextBtn").style.display = "inline";
+      document.getElementById("correctAlert").style.display = "block";
+      document.getElementById("incorrectAlert").style.display = "none";
+  }
+  else{
+    document.getElementById("solutionBtn").style.display = "inline";
+    document.getElementById("correctAlert").style.display = "none";
+    document.getElementById("incorrectAlert").style.display = "block";
+
+  }
+}
+
+function solutionHandle(){
+    document.getElementById("codeInput").value = sampleAnswer;
+  // document.getElementById("codeInput").value = "//Solution\n\ine One\n\This is line two";
+  //document.getElementById("nextBtn").style.display = "inline";
+}
+
+  var visibleHint = false;
+  var hintArea = document.getElementById("hintArea");
+  
+  function hintFunction() {
+    if (!visibleHint) {
+      hintArea.innerHTML = "Hint: Start off with zero, and just add all corresponding elements. You need to be able to iterate through the the values bob is holding."
+      visibleHint = true;
+    } else {
+      hintArea.innerHTML = ""
+      visibleHint = false;
+      
+    }
+  }
+  
+</script>
+	</body>
+	
 </html>

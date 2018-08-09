@@ -25,6 +25,9 @@ def chapterFour(request):
 
 def chapterFive(request):
     return render(request, 'cs160_final/chapterFive.html')
+    
+def congrats(request):
+    return render(request, 'cs160_final/congrats.html')
 
 """
 def chapterOneRight(request):

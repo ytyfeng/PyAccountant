@@ -31,5 +31,6 @@ urlpatterns = [
     url('chapterThree', views.chapterThree, name='chapterThree'),
     url('chapterFour', views.chapterFour, name='chapterFour'),
     url('chapterFive', views.chapterFive, name='chapterFive'),
+    url('congrats', views.congrats, name='congrats'),
 
 ]

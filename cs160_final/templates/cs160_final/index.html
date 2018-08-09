@@ -34,6 +34,10 @@ p {
 nav-link {
  background-color: #212121;
 }
+
+.navbar-nav > li > a {padding-top:40px !important; padding-bottom:65px !important;}
+
+.navbar {min-height:50px !important}
 </style>
 
 </head>
@@ -42,10 +46,14 @@ nav-link {
     <div class="container">
  <nav class="navbar navbar-default navbar-expand navbar-dark bg-dark">
       <div class="collapse navbar-collapse" id="navbarsExample02">
- 
+          <ul class="nav navbar-nav pull-left">
+                <a style="text-align:center; position:absolute;  display:block; margin-top:-10px"  class="navbar-brand navbar-middle">
+    <img src="https://preview.ibb.co/hxOAap/logo_5x.png" alt="logo_5x" border="0" width="250px"> 
+                </a>
+            </ul>
         <ul class="nav navbar-nav pull-right">
           <li class="nav-item active">
-            <a class="nav-link" style="background-color: #9EE493;"  href="chapterZero">Start <span class="sr-only">(current)</span></a>
+            <a class="nav-link" style="background-color: #9EE493;"  href="chapterZero"> <span class="sr-only">(current)</span></a>
           </li>
           
         </ul>

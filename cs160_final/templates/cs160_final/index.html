@@ -7,6 +7,21 @@
 	<title>PyAccountant</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyADqO-NN6-LdkHEyHAWDh8HFuOI5duoGjc",
+    authDomain: "pyaccountant-160.firebaseapp.com",
+    databaseURL: "https://pyaccountant-160.firebaseio.com",
+    projectId: "pyaccountant-160",
+    storageBucket: "pyaccountant-160.appspot.com",
+    messagingSenderId: "417875504734"
+  };
+  firebase.initializeApp(config);
+</script>
+
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- Latest compiled JavaScript -->
@@ -53,7 +68,7 @@ nav-link {
             </ul>
         <ul class="nav navbar-nav pull-right">
           <li class="nav-item active">
-            <a class="nav-link" style="background-color: #9EE493;"  href="chapterZero"> <span class="sr-only">(current)</span></a>
+            <a class="nav-link" style="background-color: #9EE493;"  href="chapterZero.html"> <span class="sr-only">(current)</span></a>
           </li>
           
         </ul>

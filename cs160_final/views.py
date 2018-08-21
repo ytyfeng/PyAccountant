@@ -29,10 +29,3 @@ def chapterFive(request):
 def congrats(request):
     return render(request, 'cs160_final/congrats.html')
 
-"""
-def chapterOneRight(request):
-    return render(request, 'cs160_final/chapterOneRight.html')
-
-def chapterOneWrong(request):
-    return render(request, '/cs160_final/cs160_final/chapterOneWrong.html')
-"""
